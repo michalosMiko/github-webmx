@@ -1,0 +1,101 @@
+
+
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ @mixin header-footer-style {
+     background: $header-footer-background;
+     color: $text-head-foot-color;
+     text-align: center;
+     // max-width: 100%;
+ }
+
+// // grid== funkce col-with požíta 100% jako 12sloupců, pokud chci 50% stránky je to 6 sloupců ale ve skutečnosti dva sloupce na šířku strany
+// // =theme je odstavec v html
+// ============4 sloupce==================
+ @mixin theme-box {
+     width: 3* col-width()
+ }
+// ===========theme2-box======2 sloupce======
+ @mixin theme2-box {
+  width: 6* col-width()
+}
+// ==========them3==========================
+@mixin theme3-box {
+  width: 12* col-width()
+}
+@mixin theme4-box {
+  width: 4* col-width()
+}
+
+
+// // mixina zakulacení hran
+ @mixin my-border-radius($radius: 15px){
+    border-radius: $radius;
+    
+ }
+
+@mixin button {
+    text-decoration: none;
+    background: $header-footer-background;
+    color: $text-color;
+    padding: 10px 15px;
+     border: $ordinary-border;
+    @include my-border-radius;
+
+ }
+
+
+ 
+ 
+ @mixin tablet1 {
+    @media screen and (max-width: 1100px) {
+      @content 
+    
+    }
+     }
+ @mixin tablet2 {
+     @media screen and (max-width: 1000px) {
+         @content 
+      
+       }
+ }
+
+ @mixin tablet3 {
+     @media screen and (max-width: 900px) {          
+      @content
+       }
+ }
+ 
+ @mixin mobil1 {
+     @media screen and (max-width: 800px) {
+       @content 
+    
+     }
+      }
+ @mixin mobil2 {
+    @media screen and (max-width: 700px) {
+       @content 
+    
+     }
+ }
+    
+      @mixin mobile3 {
+       @media screen and (max-width: 600px) {
+       @content  
+     }
+       }    
+       @mixin mobile4 {
+       @media screen and (max-width: 500px) {
+       @content  
+       }
+ } 
+     @mixin mobile5 {
+     @media screen and (max-width: 400px) {
+       @content  
+     }
+ }     
+
+

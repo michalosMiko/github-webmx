@@ -1,0 +1,63 @@
+
+
+
+// Theme: light, dark, army, nasa
+$theme: light;
+
+
+// ===COLORS===
+// ==============pro light theme=========
+$body-background: #fff;
+$header-footer-background: rgb(196, 204, 204);
+$text-head-foot-color: #fff; 
+$text-color: rgb(60, 62, 63);
+$ordinary-border: 2px solid rgb(185, 177, 177);
+$color: black;
+
+// ====SIZES=====
+
+$header-height: 50px;
+$footer-height: 50px;
+
+// když se přepíše proměná na DARK theme
+@if $theme == dark {
+    $header-footer-background: rgb(35, 37, 37);
+    $body-background: black; 
+    $text-color: #fff; 
+    $ordinary-border: 2px solid rgb(66, 66, 66);
+
+    $header-height: 90px;
+    $footer-height: 50px;
+} 
+
+
+@else if $theme == army {
+    $body-background: #aaaa55;
+$header-footer-background: #535E4B;
+$text-head-foot-color: #C1C2AD; 
+$text-color: #B5A4A3;
+$ordinary-border: 2px solid #C1C2AD;
+$color: #535E4B;
+
+// ====SIZES=====
+
+$header-height: 90px;
+$footer-height: 50px; 
+
+
+}
+
+@else if $theme == nasa {
+    $body-background: #7EC8E3;
+    $header-footer-background: #000C66;
+    $text-head-foot-color: #7EC8E3; 
+    $text-color: #7EC8E3;
+    $ordinary-border: 2px solid #7EC8E3;
+    $color: #050A30;
+    
+    // ====SIZES=====
+    
+    $header-height: 90px;
+    $footer-height: 50px; 
+
+}

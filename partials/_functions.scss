@@ -1,0 +1,6 @@
+
+// ===univerzální funkce na sloupce ===grid video 51
+
+@function col-width($columns: 12, $page-width: 100%, $gap: 0.1%){
+    @return ($page-width - $gap*($columns - 1)) / $columns;
+}

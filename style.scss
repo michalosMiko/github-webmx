@@ -1,0 +1,607 @@
+@import "partials/variables";
+
+@import "partials/functions";
+
+@import "partials/mixins";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: $body-background;
+    @include container;
+    
+
+
+//   =========obrázek celého pozadí======================75===================75======================
+   background: linear-gradient(rgba(247, 245, 245, 0.7),rgba(192, 191, 191, 0.9)), url("img/Glas\ back.png");
+   background-size: cover;
+   height: 100vh; 
+   background-attachment: fixed;
+}
+
+// header {
+//     }
+// fixované pozadí navigace=====
+.nav-background {
+    @include container;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+     background-color: rgba($header-footer-background,0.8);
+     border-bottom: 2px solid #fff;
+    
+         
+     
+}
+
+
+  h1 {
+      margin-top: 0;
+      line-height: $header-height;
+      text-align: center;
+  }
+// =====video 78 ====Logo====Navigace====
+  #logo img {
+      position: fixed;
+      width: 163px;
+    //   position: absolute;
+      left: 14%;
+      top: 0.3%;
+  }
+
+  nav {
+    background-color: $body-background;
+    @include header-footer-style;
+    height: $header-height;
+
+    margin: 0px auto;
+    
+ }
+nav ul {
+     float: right;
+    margin-top: 1.5px;
+    margin-right: 53px;
+
+    position: fixed;
+    margin-left: 50%;
+    z-index: 200;
+    
+
+    @include tablet1 {
+        display: none;
+         margin-bottom: 4px;
+        //  box-shadow: 1px 3px 7px rgb(88, 84, 84);
+        
+          }
+}
+nav ul li {
+    display: inline-block;
+    // @include button;
+    // width: 70px;
+    margin-top: 10px;
+
+    margin-left: 15px;
+    // =====responzivní tlačítka menu ===dolu===115
+    
+
+    &:hover {
+        // lighten=== zesvětlení, ==darken== ztmavení
+        // background: lighten($header-footer-background, 10%);
+        background: #fff;
+        padding: 1px 2px;
+        border-radius: 15px;
+        box-shadow: 2px 1px 17px 17px  #fff;
+        transition: 0.5s;
+        
+    } 
+    @include tablet1 {
+        display: block;
+        // box-shadow: 7px 3px 7px #fff;
+        margin-top: 2px;
+        // border: 0px solid transparent;
+        // background: transparent;
+        // font-size: 25px;
+        // color: #fff;
+    }   
+}
+ 
+
+nav ul li a {
+    text-decoration: none;
+    color: $text-color;
+    padding: 1px 10px;
+    font-size: 20px;
+    
+}
+    //  =================classa u dvou tlačítek ===72===============
+    .tlacitka {
+        position: absolute;
+        top: 180px;
+        left: 220px;
+        @include tablet1 {
+            // display: block;
+            margin-top: -100px;
+            z-index: 0;
+            // =====posunutí tlačítek======
+        }
+    }  
+   //  ===========stylování dvou tlačítek==========73=========responzivita 108===
+    .btn {
+        display: inline-block;
+       color: #000;
+       text-decoration: none;
+       font-size: 20px;
+        // border: 1px solid #ff8037;
+       border-radius: 15px;
+       padding: 5px 10px;
+       letter-spacing: 1px;
+       margin-top: 20px;
+       
+     
+
+    } 
+// ========stylování každeho tlačítka zvlášt========74================
+.btn-full:link,
+ .btn-full:visited {
+     background: #ff6a15;
+ }
+ .btn-full:hover,
+ .btn-full:active {
+    transition: background 1s; 
+     background: #ae4000;
+     border: 1px solid #ae4000;
+     color: white;
+ } 
+// =======================prazdné tlačítko=======================================
+.btn-empty:link,
+.btn-empty:visited {
+    background: transparent;
+    margin-left: 10px;
+    border: 1px solid #ff8037;
+
+    @include tablet1 {
+       margin-left: -2px;
+      //====srovnaní tlačítek nad sebou=== 
+    }
+}
+.btn-empty:hover,
+.btn-empty:active {
+   transition: background 1s; 
+   background: #ae4000;
+   color: white; 
+   border: 1px solid #ae4000;
+ }
+// =======Mobilní navigace=ikonka==115=======
+.mobile-nav-icon {
+    float: right;
+    margin-top: 5px;
+    width: 80px;
+    display: none;
+    
+    
+    
+    
+    
+    @include tablet1 {
+        display: inline-block;
+        z-index: 200;
+        position: fixed;
+         right: 2%;
+         
+    }
+}
+// =====mobilní navigace ==sjížděcí pozadí 115
+.mobile-nav-back {
+display: none;
+
+
+@include tablet1 {
+    
+    @include container;    
+    height: 200px;
+    position: fixed;
+    width: 100%;
+    background-color: rgba($header-footer-background,0.7);
+    border-bottom: 2px solid #fff;
+     opacity: 1;
+     z-index: 1;
+     
+     
+}
+}
+
+// =================Heading main nadpisy h2============================================
+.heading-main h2 {
+    text-align: center;
+    // margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: $color;
+}
+// =====after je podtržení pod nadpisem
+.heading-main h2:after {
+    content: "";
+    display: block;
+    max-width: 1200px;
+    border-bottom: 2px solid $color;
+    margin: 20px auto;
+  
+}
+// ====empty space ===mezery nad nadpisy==114===
+.empty-space {
+    height: 50px;
+}
+.empty-space2 {
+    height: 200px;
+}
+
+// .about-us================první h2================, 
+   .about-us {
+    margin-top: 200px;
+
+  }
+
+p{
+
+    border: $ordinary-border;
+    border-radius: 15px;
+    padding: 2px 5px;
+    background-color: $header-footer-background;
+ }  
+
+ // theme jsou sloupce navázané na grid ve _functions a v mixině
+
+// display: inline-block; dá sloupce vedle sebe===theme-boxy1-3 jsou mixiny na počet sloupců
+.theme {
+    @include theme-box;
+    display: inline-block;
+ }
+ .theme2 {
+     @include theme2-box;
+     display: inline-block;
+ }
+ .theme3 {
+     @include theme3-box;
+     display: inline-block;
+ }
+ .theme4 {
+     @include theme4-box;
+     display: inline-block;
+ }
+//  ====================Galerie start===========vid 86-89==========================
+    .photo-segment li {
+        list-style-type: none;
+        background-color: #000;
+        overflow: hidden;
+        border-radius: 15px;
+        height: 200px;
+        @include tablet3 {
+            background-color: transparent;
+            
+        }
+    }
+    .photo-segment img {
+        width: 90%;
+        height: 200px;
+        opacity: 0.8;
+        transform: scale(1.15);
+
+        @include tablet3 {
+            opacity: 1;
+            transform: scale(1);
+            
+        }
+    }
+    .photo-segment img:hover {
+        transition: transform 0.5s, opacity 0.5s;
+        transform: scale(1.4);
+        opacity: 1;
+       @include tablet3 {
+           transform: scale(1);
+       }
+    }
+
+// ˇ====================Galerie end=========================================
+
+ img {
+    //width: 70%; zmenší sloupce a vytvoří mezery/okraje
+        // width: 70%;
+        width: 70%;
+        // display: block; dá každemu sloupci 50%
+        display: block; 
+        margin: 0 auto;
+        @include my-border-radius;
+        // == @include my-border-radius (50%); ==kdybych chtěl přidat zakulacení tady třeba na kolečka
+        // box-shadow: 4px 0px 10px #fff;      
+}
+p {
+    color: $text-color;
+    background-color: #fff;
+}
+.sixt-theme p, .sixt-theme h2 {
+    color: $text-color;
+    border: 2px solid black;
+    padding: 15px 5px;
+    width: 70%;
+        // display: block; dá každemu sloupci 50%
+        display: block; 
+        margin: 0 auto;
+        @include my-border-radius;
+        // == @include my-border-radius (50%); ==kdybych chtěl přidat zakulacení tady třeba na kolečka
+        box-shadow: 4px 0px 10px #fff;
+        background: $header-footer-background;
+}
+.reference {
+
+    display: inline-block;
+    width: 100%;
+    
+}
+// srovnání tlačítka a nastylované v mixině
+.references a {
+    text-align: center;
+    display: block;
+    width: 120px;
+    margin: 10px auto;
+    @include button;
+    
+//  ==&== nahrazuje nadřízené =a= aby to v css fungovalo
+    &:hover {
+        // lighten=== zesvětlení, ==darken== ztmavení
+        background: lighten($header-footer-background, 10%);
+        transition: 0.5s;
+        box-shadow: 4px 0px 10px #fff;
+    }
+}
+
+// ===line-height je výška řádku 
+footer {
+    height: $footer-height;
+    @include header-footer-style;
+    
+    h5 {
+        line-height: $footer-height;
+    }
+
+}
+
+.theme, .theme2, .theme3, .heading-main, .about-us {
+
+    @include tablet1 {
+        width: 1000px;
+        margin: 0px auto;
+     }
+     @include tablet2 {
+        width: 600px;
+        margin: 0px auto;
+    }
+    @include tablet3 {
+        width: 600px;
+        margin: 0px auto;
+    }
+    @include mobil2 {
+        width: 600px;
+        margin: 0px auto;
+    }
+
+    @include mobile3 {
+        width: 500px;
+        margin: 0px auto;
+        
+    }
+   
+
+
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+// =================Galerie===========================
+
+.slider {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 60px auto;
+}
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+     display: none;
+}
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+.slide img {
+    width: 800px;
+    height: 500px;
+}
+// scss for manual galery slider========================
+.navigation-manual {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 2px;
+    width: 10%;
+    height: 0.7px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+.manual-btn:hover {
+    background: #fff;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+// =====scss for automat galery==============
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+.navigation-auto div {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 2px;
+    width: 10%;
+    height: 0.7px;
+    cursor: pointer;
+    transition: 1s;
+}
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #fff;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #fff;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #fff;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #fff;
+}
+
+.slider, .slides, .slides input, .slide, .slide img {
+
+    @include tablet1 {
+        width: 500px;
+        margin: 0px auto;
+        
+        
+
+        #radio1:checked ~ .first{
+            margin-left: 0;
+        }
+        
+        #radio2:checked ~ .first{
+            margin-left: -100%;
+        }
+        #radio3:checked ~ .first{
+            margin-left: -200%;
+        }
+        #radio4:checked ~ .first{
+            margin-left: -300%;
+        }
+
+    
+        
+    }
+
+}
+
+.navigation-auto, .navigation-manual, .manual-btn, .navigation-auto, .navigation-auto div  {
+
+    @include tablet1 {
+        width: 800px;
+        height: 450px;
+
+        display: none;
+    }
+}
+.manual-btn:hover {
+    @include tablet1 {
+        display: none;
+    }
+}
+
+// =============Video theme2=================
+
+ .theme2 vide-theme {
+        @include theme2-box;
+         display: flex;
+         flex-direction: row;
+         justify-content: space-evenly;
+         
+   }
+  
+   .theme2 vide-theme a {
+    
+    margin: 20px auto;
+    
+    
+    @include button;
+     }
+     
+  video {
+    // width: 50%;
+    // height: auto;
+    
+    // display: inline-block;
+    
+    margin: 0 auto;
+    cursor: pointer;
+    
+    margin-left: 150px;
+    @include theme2-box;
+
+    
+  }
+ .clip1 {
+      max-width: 100%;
+      
+  }
+
+ .reference, .clip1, .theme2 vide-theme, video {
+    @include tablet3 {
+        display: none;
+    }
+  }
+
+//   .clip3 {
+//       max-width: 100%
+//       @include theme3-box;
+//       display: block;
+//   }
+//   .theme3 vi-theme {
+//     @include theme3-box;
+//     margin: 0 auto; 
+//   }
+
+// viu port 100%vw
+  .chart-icon {
+      margin-left: 47px;
+      
+  }
